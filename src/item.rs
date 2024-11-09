@@ -1,5 +1,6 @@
 use crate::game::Game;
 
+#[derive(Debug, Clone)]
 pub struct Item {
     name: String,
     description: String,

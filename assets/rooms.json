@@ -1,0 +1,33 @@
+{
+  "Entrance": {
+    "name": "Entrance",
+    "description": "A dusty old entrance hall with cobwebs in every corner.",
+    "connections": {
+      "north": "Hallway"
+    },
+    "items": ["rusty key"]
+  },
+  "Hallway": {
+    "name": "Hallway",
+    "description": "A long hallway lined with ancient portraits.",
+    "connections": {
+      "south": "Entrance",
+      "east": "Library",
+      "down": "Basement"
+    }
+  },
+  "Library": {
+    "name": "Library",
+    "description": "A room filled with dusty old books and strange artifacts.",
+    "connections": {
+      "west": "Hallway"
+    }
+  },
+  "Basement": {
+    "name": "Basement",
+    "description": "A dark, cold basement with the sound of dripping water.",
+    "connections": {
+      "up": "Hallway"
+    }
+  }
+}
