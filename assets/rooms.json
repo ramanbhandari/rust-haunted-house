@@ -5,12 +5,14 @@
     "connections": {
       "north": "Hallway"
     },
-    "items": {
-      "name": "rusty key",
-      "description": "An old key made of bone",
-      "is_collectible": "false",
-      "is_usable": "true"
-    }
+    "items": [
+      {
+        "name": "rusty key",
+        "description": "An old key made of bone",
+        "is_collectible": true,
+        "is_usable": true
+      }
+    ]
   },
   "Hallway": {
     "name": "Hallway",
@@ -20,12 +22,7 @@
       "east": "Library",
       "down": "Basement"
     },
-    "items": {
-      "name": "rusty key",
-      "description": "An old key made of bone",
-      "is_collectible": "false",
-      "is_usable": "true"
-    }
+    "items": []
   },
   "Library": {
     "name": "Library",
@@ -33,12 +30,14 @@
     "connections": {
       "west": "Hallway"
     },
-    "items": {
-      "name": "rusty key",
-      "description": "An old key made of bone",
-      "is_collectible": "false",
-      "is_usable": "true"
-    }
+    "items": [
+      {
+        "name": "ancient book",
+        "description": "A dusty old book filled with strange symbols.",
+        "is_collectible": true,
+        "is_usable": false
+      }
+    ]
   },
   "Basement": {
     "name": "Basement",
@@ -46,11 +45,6 @@
     "connections": {
       "up": "Hallway"
     },
-    "items": {
-      "name": "rusty key",
-      "description": "An old key made of bone",
-      "is_collectible": "false",
-      "is_usable": "true"
-    }
+    "items": []
   }
 }

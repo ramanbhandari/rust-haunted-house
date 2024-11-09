@@ -19,4 +19,18 @@ impl Game {
             active: true,
         }
     }
+
+    pub fn display_curr_room(&self) {
+        let curr_room = self.rooms.get(&self.player.curr_room).unwrap();
+        println!("\nYou are in: {}", curr_room.name);
+        println!("{}", curr_room.description);
+
+        if !curr_room.items.is_empty() {
+            println!("You see: ");
+            for item in &curr_room.items {
+                println!("- {}: {}", item.name, item.description);
+            }
+        }
+        println!("Available directions: {:?}", curr_room.connections.keys());
+    }
 }

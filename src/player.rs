@@ -3,8 +3,8 @@ use crate::item::Item;
 
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Player {
-    curr_room: String,
-    inventory: Vec<Item>,
-    health: u32,
-    sanity: u32,
+    pub curr_room: String,
+    pub inventory: Vec<Item>,
+    pub health: u32,
+    pub sanity: u32,
 }
