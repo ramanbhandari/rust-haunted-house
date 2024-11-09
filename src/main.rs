@@ -2,6 +2,7 @@ mod room;
 mod item;
 mod player;
 mod game;
+mod utils;
 
 use crate::player::Player;
 use crate::game::Game;
@@ -14,6 +15,6 @@ fn main() {
         sanity: 100
     };
 
-    let game = Game::new(player);
-    game.display_curr_room();
+    let mut game = Game::new(player);
+    game.run();
 }
