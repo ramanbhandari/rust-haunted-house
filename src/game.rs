@@ -48,22 +48,35 @@ impl Game {
     }
     fn handle_command(&mut self, command: String) -> bool {
         let command = command.trim().to_lowercase();
+        let command_args: Vec<&str> = command.split_whitespace().collect();
 
-        if command.starts_with("go") {
-            let command_args: Vec<&str> = command.split(" ").collect();
-            let direction = command_args[1];
-            self.move_player(direction.trim());
-        } else if command.starts_with("pick up ") {
-            let command_args: Vec<&str> = command.split(" ").collect();
-            let item_name = command_args[1];
-            self.pick_up_item(item_name.trim());
-        } else if command.starts_with("inventory") {
-            self.show_inventory();
-        } else if command == "exit" {
-            println!("Exiting the haunted house..");
-            return false;
-        } else {
-            println!("Command is not know");
+        match command_args[0] {
+            "go" => {
+                if command_args.len() < 2 {
+                    println!("Please specify a command, don't be a ghost (e.g. go north)");
+                } else {
+                    let direction = command_args[1];
+                    self.move_player(direction.trim());
+                }
+            }
+            "pick" => {
+                if command_args.len() < 3 {
+                    println!("Please specify a command, don't be a ghost (e.g. pick up rusty key)");
+                } else {
+                    let item_name = command_args[2..].join(" ");
+                    self.pick_up_item(&item_name);
+                }
+            }
+            "inventory" => {
+                self.show_inventory();
+            }
+            "exit" => {
+                println!("Exiting the haunted house..");
+                return false;
+            }
+            _ => {
+                println!("Command is not know. Try maybe go....");
+            }
         }
         true
     }
